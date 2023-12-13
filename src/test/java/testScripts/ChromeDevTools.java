@@ -1,14 +1,18 @@
 package testScripts;
 
+import java.util.Base64;
 import java.util.Map;
 import java.util.Optional;
 import java.util.function.Consumer;
 
 import org.apache.commons.collections.map.HashedMap;
+import org.openqa.selenium.By;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chromium.ChromiumDriver;
 import org.openqa.selenium.devtools.DevTools;
+import org.openqa.selenium.devtools.v117.network.model.Headers;
 import org.openqa.selenium.devtools.v117.network.model.RequestWillBeSent;
+import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import org.openqa.selenium.devtools.v117.network.Network;
@@ -51,7 +55,7 @@ public class ChromeDevTools {
 	  driver.executeCdpCommand("Emulation.setGeolocationOverride", deviceMetrics);
 	  driver.get("https://oldnavy.gap.com/stores");
   }
-@Test  
+//@Test  
   public void captureNWTrafficTest()
   {
 	  Map deviceMetrics=new HashedMap() {{
@@ -73,5 +77,24 @@ public class ChromeDevTools {
 	  
 	  driver.get("https://www.selenium.dev/");
 	  devTools.send(Network.disable());
+  }
+  
+  @Test
+  public void basicAuthTest()
+  {
+//	  devTools.send(Network.enable(Optional.empty(),Optional.empty(),Optional.empty()));
+//	  Map<String,Object> headers=new HashedMap();
+//	  String strUser="admin";
+//	  String strPwd="admin";
+//	  
+//	  String basicAuth="Basic "+new String(new Base64().encode(String.format("%s : %s", 
+//			  strUser,strPwd).getBytes()));
+//	  System.out.println("Auth ....+ "+basicAuth);
+//	  headers.put("Authorization", basicAuth);
+//	  devTools.send(Network.setExtraHTTPHeaders(new Headers(headers)));
+//	  
+//	  driver.get("http://the-internet.herokuapp.com/basic_auth");
+//	  String strMsg=driver.findElement(By.cssSelector("div.example p")).getText();
+	 // Assert.assertEquals(strMsg, "Congratulations! You must have the proper credentials");
   }
 }
