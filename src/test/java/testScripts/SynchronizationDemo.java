@@ -1,6 +1,9 @@
 package testScripts;
 
+import java.time.Duration;
+
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -22,6 +25,17 @@ public class SynchronizationDemo {
 		
 		
       // Jquery tooltip
+		
+		//javascriptExecutor
+		WebDriver driver=new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+		driver.get("https://www.google.com");
+		JavascriptExecutor js=(JavascriptExecutor)driver;
+		WebElement element=(WebElement)js.executeScript("return document.getElementsByClassName('gLFyf')[0]");
+	    element.sendKeys("javatutorial");
+	    element.submit();
+	    js.executeScript("window.scrollBy(0,document.body.scrollHeight)");
 		
 	}
 
