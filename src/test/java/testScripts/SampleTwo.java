@@ -17,7 +17,7 @@ public void sample22() {
 	  System.out.println("sample22 thread"+id);
   }
   
-  @Test(groups = "feature2")
+  @Test(groups = "feature3")
 
 public void sample23() {
 	  
@@ -25,7 +25,7 @@ public void sample23() {
 	  System.out.println("sample23 thread"+id);
 }
 
-@Test
+@Test(groups = "feature4")
 public void sample24() {
 	  
 	  long id = Thread.currentThread().getId();

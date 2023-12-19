@@ -17,14 +17,14 @@ public void sample12() {
 	  System.out.println("sample12 thread"+id);
   }
 
-  @Test(groups = "feature2")
+  @Test(groups = "feature3")
 public void sample13() {
 	  
 	  long id = Thread.currentThread().getId();
 	  System.out.println("sample13 thread"+id);
 }
   
-  @Test
+  @Test(groups = "feature4")
 public void sample14() {
 	  
 	  long id = Thread.currentThread().getId();
